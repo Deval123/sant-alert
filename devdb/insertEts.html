@@ -1,0 +1,50 @@
+<?php
+if (isset($_SERVER['HTTP_ORIGIN'])) {
+        header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Max-Age: 86400');    // cache for 1 day
+    }
+ 
+    // Access-Control headers are received during OPTIONS requests
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+ 
+        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+            header("Access-Control-Allow-Methods: GET, POST, OPTIONS");         
+ 
+        if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+            header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+ 
+        exit(0);
+    }
+ 
+  require "dbconnect.php";
+
+$data = file_get_contents("php://input");
+    if (isset($data)) {
+        $request = json_decode($data);
+		$nom = $request->nom;
+		$premon = $request->premon;
+		$telephone = $request->telephone;
+		$email = $request->emailpers;
+		$type_personnel = $request->type_personnel;
+        $password = $request->passwordpers;
+        $etablissement = $request->etablissement;
+        $etablissement_id = $etablissement[0]->id;
+    }
+
+
+    $sql = "INSERT INTO etablissement (statut, nom, code, telephone, email, type, adresse,ville)
+VALUES ('public', 'hôpital central', 'hpcentral', '688953574', 'uyhb@uybhj.fr', 'hôpital', 'ydé', 'yaoundé')";
+
+
+    if ($con->query($sql) === TRUE) {
+        $response= "Registration Successfull";
+
+    } else {
+        $response= "Error: ". $sql . "<br>" . $db->error;
+    }
+  
+	echo json_encode( $response);
+
+ 
+?>
