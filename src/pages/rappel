@@ -1,0 +1,16 @@
+I changed
+
+map((response: any) => response.json())
+to simply be:
+
+.pipe(map((response: any) => response.json()));
+I found the fix here:
+
+https://github.com/angular/angular/issues/15548#issuecomment-387009186
+
+git status
+git add -A
+git commit -m "uhbikjn";
+git push origin master
+notification
+https://www.djamware.com/post/5abe4c6680aca714d19d5b9d/ionic-3-angular-5-and-cordova-local-notification-example

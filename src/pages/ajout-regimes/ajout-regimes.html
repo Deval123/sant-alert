@@ -1,0 +1,51 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+  <ion-list no-line>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Type regime" name="type_regime" #type_regime></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="date début" name="datedebut" #datedebut></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input round type="datetime-local" placeholder="poids de départ" name="poidsDepart" #poidsDepart></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="imc" name="imc" #imc></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="restrictions" name="restrictions" #restrictions></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="taille" name="taille" #taille></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="nature du regime" name="natureRegime" #natureRegime></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="alimentation recommandé" name="alimentationRecommande" #alimentationRecommande></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="type de traitement" name="typeTraitement" #typeTraitement></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input round type="datetime-local" placeholder="date de fin" name="dateFin" #dateFin></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button  round outline block (click)="Ajouter()">Ajouter</button>
+  </div>
+
+</ion-content>
+

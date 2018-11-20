@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sant'alert</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+  <!-- icons -->
+  <link href="assets/fonts/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/fonts/material-design-icons/material-icon.css" rel="stylesheet" type="text/css" />
+  <!-- bootstrap -->
+  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- data tables -->
+  <link href="assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Material Design Lite CSS -->
+  <link rel="stylesheet" href="assets/plugins/material/material.min.css">
+  <link rel="stylesheet" href="assets/css/material_style.css">
+  <!-- Theme Styles -->
+  <link href="assets/css/theme/light/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+  <link href="assets/css/theme/light/style.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/plugins.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/theme/light/theme-color.css" rel="stylesheet" type="text/css" />
+  <!-- favicon -->
+  <!-- cordova.js required for cordova apps (remove if not needed) -->
+  <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Ionic's root component and where the app will load -->
+<ion-app></ion-app>
+
+<!-- The polyfills js is generated during the build process -->
+<script src="build/polyfills.js"></script>
+
+<!-- The vendor js is generated during the build process
+     It contains all of the dependencies in node_modules -->
+<script src="build/vendor.js"></script>
+
+
+<!-- start js include path -->
+<script src="assets/plugins/jquery/jquery.min.js" ></script>
+<script src="assets/plugins/popper/popper.js" ></script>
+<script src="assets/plugins/jquery-blockui/jquery.blockui.min.js" ></script>
+<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- bootstrap -->
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" ></script>
+<script src="assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js" ></script>
+<!-- data tables -->
+<script src="assets/plugins/datatables/jquery.dataTables.min.js" ></script>
+<script src="assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js" ></script>
+<script src="assets/js/pages/table/table_data.js" ></script>
+<!-- Common js-->
+<script src="assets/js/app.js" ></script>
+<script src="assets/js/layout.js" ></script>
+<script src="assets/js/theme-color.js" ></script>
+<!-- Material -->
+<script src="assets/plugins/material/material.min.js"></script>
+<!-- end js include path -->
+<!-- The main bundle js is generated during the build process -->
+<script src="build/main.js"></script>
+
+</body>
+</html>

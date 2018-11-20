@@ -1,0 +1,46 @@
+<!--
+  Generated template for the AjoutAgendaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-line>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Nature" name="nature" #nature></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Lieu" name="lieu" #lieu></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input round type="datetime-local" placeholder="Date de début" name="datedebut" #datedebut></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input round type="datetime-local" placeholder="Date de fin" name="datefin" #datefin></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Observation" name="observation" #observation></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button  round outline block (click)="Ajouter()">Ajouter</button>
+  </div>
+</ion-content>

@@ -1,0 +1,85 @@
+<!--
+  Generated template for the AgendaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Alerte</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list >
+
+    <div class="page-content">
+
+      <!-- start agenda patient list -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="card  card-box">
+            <div class="card-head">
+              <header>agenda patient </header>
+              <div class="tools">
+                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+              </div>
+            </div>
+            <div class="card-body ">
+              <div class="table-wrap">
+                <div class="table-responsive">
+                  <table class="table display product-overview mb-30" id="support_table">
+                    <thead>
+                    <tr>
+                      <th> nature  </th>
+                      <th> date début </th>
+                      <th> date de fin </th>
+                      <th> Actions </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of items">
+                      <td>
+                        <a href="####"> {{item.nature}} </a>
+                      </td>
+                      <td> {{item.datedebut}} </td>
+                      <td>{{item.datefin}}</td>
+                      <td>
+                        <a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" >
+                          <i class="fa fa-check"></i></a>
+                        <a href="javascript:void(0)" class="" data-toggle="tooltip" title="View" >
+                          <i class="fa fa-certificate"></i></a>
+                        <a href="javascript:void(0)" (click)="deleteAgendaPatients(item.id)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                          <i class="fa fa-trash"></i></a>
+                      </td>
+                    </tr>
+
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end agenda patient list -->
+
+
+    </div>
+
+    <div id="circle-button-top" class="loginButton">
+      <button  (click)="addAgendaPatients()" class="button" style="background-color: dodgerblue; color: white; font-size: x-large; border-radius: 50% " >
+        +</button>  </div>
+
+  </ion-list>
+</ion-content>

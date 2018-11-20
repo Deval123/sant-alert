@@ -1,0 +1,124 @@
+<!--
+  Generated template for the SoinsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content padding>
+  <ion-list >
+
+    <div class="page-content">
+
+
+
+      <!-- start SUIVI SYMPTOMES list -->
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="card  card-box">
+            <div class="card-head">
+              <header>HISTORIQUE </header>
+              <div class="tools">
+                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+              </div>
+            </div>
+            <div class="card-body ">
+              <div class="table-wrap">
+                <div class="table-responsive">
+                  <table class="table display product-overview mb-30" id="support_table">
+                    <thead>
+                    <tr>
+                      <th> Date </th>
+                      <th> Symtome </th>
+                      <th> Traitement  </th>
+                      <th> Actions </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr *ngFor="let item of items">
+                      <td>
+                        <a href="####"> {{item.datecreate}} </a>
+                      </td>
+                      <td> {{item.symtome}} </td>
+                      <td>{{item.traitement}}</td>
+                      <td>
+                        <a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" >
+                        <i class="fa fa-check"></i></a>
+                        <a href="javascript:void(0)" class="" data-toggle="tooltip" title="View" >
+                          <i class="fa fa-certificate"></i></a>
+                        <a href="javascript:void(0)" (click)="deleteAuto_med(item.id)" class="text-inverse" title="Delete" data-toggle="tooltip">
+                          <i class="fa fa-trash"></i></a>
+                      </td>
+                    </tr>
+
+
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end SUIVI SYMPTOMES list -->
+
+
+    </div>
+
+    <div id="circle-button-top" class="loginButton">
+      <button  (click)="addautomed()" class="button" style="background-color: dodgerblue; color: white; font-size: x-large; border-radius: 50% " >
+        +</button>  </div>
+
+  </ion-list>
+</ion-content>
+
+<!--
+<ion-content padding>
+
+  <ion-list >
+    <div >
+      <ion-item *ngFor="let item of items" >
+        <h2>Date {{item.datecreate}}</h2>
+        <h3>Votre suivi personnel:</h3>
+        <ion-row>
+          <ion-col col-4>
+            Symtome:
+          </ion-col>
+          <ion-col col-8>
+            {{item.symtome}}
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            Le traitement:
+          </ion-col>
+          <ion-col col-8>
+            {{item.traitement}}
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            Coût du traitement:
+          </ion-col>
+          <ion-col col-8>
+            {{item.cout_traitement}}
+          </ion-col>
+
+        </ion-row>
+
+      </ion-item>
+    </div>
+    <div id="circle-button-top" class="loginButton"><button  (click)="addautomed()" class="button" style="background-color: dodgerblue; color: white; font-size: x-large; border-radius: 50% " >+</button>  </div>
+  </ion-list>
+
+</ion-content>
+
+-->
