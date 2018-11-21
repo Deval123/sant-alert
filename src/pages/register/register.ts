@@ -123,7 +123,7 @@ export class RegisterPage {
       });
 
       loader.present().then(() => {  ///JSON.stringify(res.url)  JSON.stringify(data)
-        this.http.post("http://habitechsolution.com/devdb/register.php",data, options)
+        this.http.post("http://localhost/devdb/register.php",data, options)
           //.map(res => JSON.stringify(data))
           .pipe(map((res: any) => res.json()))
           //.pipe(map((res: any) => res.json()))
@@ -160,7 +160,7 @@ export class RegisterPage {
   Registerpersonnel(){
     ///etablissement_id		premon		email	type_personnel
 
-   /* if(this.nom.value=="" ){
+    if(this.nom.value=="" ){
 
       let alert = this.alertCtrl.create({
 
@@ -235,6 +235,11 @@ export class RegisterPage {
     }
     else
     {
+
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/json' );
+      let options = new RequestOptions({ headers: headers });
       let data = {
         nom: this.nom.value,
         passwordpers: this.passwordpers.value,
@@ -244,61 +249,30 @@ export class RegisterPage {
         matricule: this.matricule.value,
         code: this.code.value
       }
-      localStorage.setItem('data', JSON.stringify(data));
-
-      let code = {code: this.code.value}
-      var headers = new Headers();
-      headers.append("Accept", 'application/json');
-      headers.append('Content-Type', 'application/json' );
-      let options = new RequestOptions({ headers: headers });
-
 
       let loader = this.loading.create({
         content: 'Processing please wait...',
       });
 
-
-      loader.present().then(() => {
-        this.http.post('http://habitechsolution.com/devdb/countEts.php',code, options)
-          .pipe(map((res: any) => res.json()))
+      console.log(data);
+      loader.present().then(() => {  ///JSON.stringify(res.url)  JSON.stringify(data)
+        this.http.post("http://localhost/devdb/insertPersonnel.php",data, options)
+          .pipe(map((res: any) => res.json))
           .subscribe(res => {
             loader.dismiss()
-            if(res=="Exist"){
-              let loader = this.loading.create({
-                content: 'Processing please wait...',
+            if(res == "Registration successfull"){
+              console.log(res);
+              let alert = this.alertCtrl.create({
+                title:"CONGRATS",
+                subTitle:(res),
+                buttons: ['OK']
               });
-
-                console.log(data);
-                loader.present().then(() => {  ///JSON.stringify(res.url)  JSON.stringify(data)
-                this.http.post("http://habitechsolution.com/devdb/insertPersonnel.php",data, options)
-                  .pipe(map((res: any) => res.json))
-                  .subscribe(res => {
-                    loader.dismiss()
-                    if(res=="Registration successfull"){
-                      console.log(res);
-                      let alert = this.alertCtrl.create({
-                        title:"CONGRATS",
-                        subTitle:(res),
-                        buttons: ['OK']
-                      });
-                      console.log(res);
-                      alert.present();
-                      this.events.publish('user:loggedin');
-                      this.navCtrl.setRoot(HomePersonnelPage);
-                    }else
-                    {
-                      let alert = this.alertCtrl.create({
-                        title:"ERROR",
-                        subTitle:(res),
-                        buttons: ['OK']
-                      });
-                      alert.present();
-                      this.navCtrl.setRoot(RegisterPage);
-                    }
-                  });
-              });
-            }
-            else{
+              console.log(res);
+              alert.present();
+              /*this.events.publish('user:loggedin');
+              this.navCtrl.setRoot(HomePersonnelPage);*/
+            }else
+            {
               let alert = this.alertCtrl.create({
                 title:"ERROR",
                 subTitle:(res),
@@ -307,15 +281,13 @@ export class RegisterPage {
               alert.present();
               this.navCtrl.setRoot(RegisterPage);
             }
-
           });
-
       });
 
 
 
 
-    }*/
+    }
 
     this.navCtrl.push(HomePersonnelPage);
   }

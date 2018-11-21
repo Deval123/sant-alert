@@ -55,7 +55,8 @@ import { AjoutEtsPage } from '../pages/ajout-ets/ajout-ets';
 export class MyApp {// AjoutEtsPage
   rootPage:any = HomePage;
   @ViewChild(Nav) nav: Nav;
-
+  url : "http://localhost/devdb/";
+  //url : "http://habitechsolution.com/devdb/";
   pages: Array<{title: string, component:any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, events: Events, public splashScreen: SplashScreen) {

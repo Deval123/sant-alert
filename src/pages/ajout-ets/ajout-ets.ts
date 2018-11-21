@@ -129,7 +129,7 @@ export class AjoutEtsPage {
       });
 
       loader.present().then(() => {  ///JSON.stringify(res.url)  JSON.stringify(data)
-        this.http.post("http://habitechsolution.com/devdb/insertEts.php",data, options)
+        this.http.post("http://localhost/devdb/insertEts.php",data, options)
           //.map(res => JSON.stringify(data))
           .pipe(map((res: any) => res.json()))
           //.pipe(map((res: any) => res.json()))
