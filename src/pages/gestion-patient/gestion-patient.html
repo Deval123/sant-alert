@@ -8,6 +8,18 @@
 
 
 <ion-content padding>
+  <div  padding>
+    <ion-segment [(ngModel)]="opt" color="primary">
+      <ion-segment-button value="case1">
+        Patient ordinaire
+      </ion-segment-button>
+      <ion-segment-button value="case2">
+        Mère et enfant
+      </ion-segment-button>
+      </ion-segment>
+    </div>
+  <div [ngSwitch]="opt" >
+    <form  *ngSwitchCase="'case1'">
   <p text-center> Consulter les informations d'un patient</p>
   <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
   <p text-center> Ajouter des informations chez un patient</p>
@@ -16,6 +28,21 @@
   </div>
   <div padding>
     <button ion-button  round outline block (click)="ajout()">Compte Existant</button>
+  </div>
+      </form>
+    </div>
+  <div [ngSwitch]="opt" >
+    <form  *ngSwitchCase="'case2'">
+      <p text-center> Consulter les informations d'un patient</p>
+      <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
+      <p text-center> Ajouter des informations chez un patient</p>
+      <div padding>
+        <button ion-button  round outline block (click)="creation()">Nouveau Compte</button>
+      </div>
+      <div padding>
+        <button ion-button  round outline block (click)="ajout()">Compte Existant</button>
+      </div>
+    </form>
   </div>
 
 </ion-content>
